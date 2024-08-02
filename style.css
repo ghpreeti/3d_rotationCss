@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins';
+    color: #1E1E1E;
+    background: url(../Assets/melting-flavored-cloudy-ice-cubes.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0.2, 0.7); /* Adjust the transparency here */
+    z-index: -1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.banner {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    height: calc(100vh - 50px); /* Subtracting header height */
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.bannner .product{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    z-index: 2;
+    width: 100px;
+    /* height: 300px; */
+    transition: 0.7s;
+    /* display: flex;
+    flex-direction: row; */
+}
+.product .soda{
+    position: absolute;
+    bottom: 0;
+    left: calc(500px);
+    /* min-height: calc(100vh - 210px); */
+    transform: translateX(-50%);
+    /* transform: translateY(-10%); */
+}
+.soda{
+    --left: 0px;
+    background: 
+        var(--url) var(--left) 0,
+        url(../Assets/freepik-export-20240731054546BgL4.png) 0 0;
+    background-size: auto 100%;
+    width: 260px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    transition: 0.8s;
+    mask-image: url(../Assets/freepik-export-20240731054546BgL4.png);
+    mask-size: auto 100%;
+    /* transform: translateY(-10%); */
+    
+}
+
+/* .banner .product:hover{
+    --left: -1000px;
+} */
+
+.soda:nth-child(2){
+    opacity: 0;
+   
+}
+.product:hover{
+    bottom: 300px;
+}
+.product:hover .soda:nth-child(2){
+    opacity: 1;
+    --left: 550px;
+}
+.product:hover .soda:nth-child(1){
+    opacity: 0;
+    --left: 500px;
+}
+
+@media screen and (max-width: 1023px) {
+    
+    .soda{
+        width: 400px;
+    }
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 2px;
+    }
+}
